@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>🕵️ Mystery Case</title>
+<title>🎮 Duo Profile ❤️</title>
 
 <style>
 body{
-background:#222;
-color:white;
-font-family:Arial;
-text-align:center;
-padding:20px;
+    background: linear-gradient(135deg,#ffb6d9,#ff4d8d);
+    font-family: Arial, sans-serif;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.card{
+    background:#ffffff33;
+    backdrop-filter: blur(10px);
+    border-radius:25px;
+    padding:25px;
+    max-width:500px;
+    margin:auto;
+    box-shadow:0 0 20px #ff69b4;
+}
+
+h1{
+    color:#fff0f8;
+}
+
+h2{
+    color:#ffd6eb;
 }
 
 .box{
-background:#333;
-padding:25px;
-border-radius:20px;
-max-width:400px;
-margin:auto;
+    background:#ff69b433;
+    border-radius:15px;
+    padding:15px;
+    margin:15px 0;
 }
 
-input{
-padding:10px;
-border-radius:10px;
-border:0;
-text-align:center;
+.heart{
+    font-size:35px;
+}
+
+.line{
+    color:#ffe6f2;
 }
 
 button{
-padding:12px 20px;
-margin:10px;
-border:0;
-border-radius:15px;
-background:#d4af37;
-cursor:pointer;
-}
-
-.page{
-display:none;
-}
-
-.show{
-display:block;
+    background:#ff4d8d;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:30px;
+    font-size:16px;
 }
 </style>
 
@@ -49,111 +59,87 @@ display:block;
 
 <body>
 
+<div class="card">
+
+<div class="heart">💗</div>
+
+<h1>🎮 DUO PROFILE UNLOCKED 🎮</h1>
+
+<h2>kim:) ❤️ Zero六</h2>
+
+<p class="line">━━━━━━━━━━━━━━</p>
+
+
 <div class="box">
 
-<div id="start" class="page show">
-<h1>🕵️ Case File #001</h1>
-<p>The Hidden Surprise</p>
+<h2>👤 Player 1: kim:)</h2>
 
-<button onclick="next('clue1')">🔍 Start Investigation</button>
-</div>
-
-
-<div id="clue1" class="page">
-<h2>🗝️ Clue 1</h2>
-<p>Where did we first meet?</p>
-
-<input id="a1" placeholder="Answer">
-
-<br>
-
-<button onclick="check1()">Check</button>
-<p id="m1"></p>
-</div>
+<p>
+✨ Role: Kagura Main<br>
+💖 Special Skill: Making every moment special<br>
+🏆 Title: Favorite Duo Partner
+</p>
 
 
-<div id="clue2" class="page">
-<h2>📁 Clue 2</h2>
-<p>What do we call each other?</p>
+<h2>👤 Player 2: Zero六</h2>
 
-<input id="a2" placeholder="Answer">
-
-<br>
-
-<button onclick="check2()">Check</button>
-<p id="m2"></p>
-</div>
-
-
-<div id="clue3" class="page">
-<h2>🔐 Clue 3</h2>
-<p>What is our favorite activity?</p>
-
-<input id="a3" placeholder="Answer">
-
-<br>
-
-<button onclick="check3()">Check</button>
-<p id="m3"></p>
-</div>
-
-
-<div id="reward" class="page">
-<h1>🏆 Case Solved!</h1>
-
-<p>You found the hidden surprise.</p>
-
-<h2>💋 A Kiss</h2>
-</div>
-
+<p>
+⚔️ Role: Freya User<br>
+🔥 Special Skill: Always fighting by my side<br>
+🏆 Title: My Forever Teammate
+</p>
 
 </div>
 
 
-<script>
+<div class="box">
 
-function next(page){
-document.querySelectorAll(".page")
-.forEach(x=>x.classList.remove("show"));
+<h2>📊 DUO STATS</h2>
 
-document.getElementById(page)
-.classList.add("show");
-}
+<p>
+❤️ Together Since: 2 Years<br>
+🎮 Favorite Activity: Playing & Making Memories<br>
+🏆 Teamwork: 100%<br>
+✨ Chemistry: Legendary<br>
+💎 Bond Level: MAX
+</p>
 
-
-function check1(){
-let a=document.getElementById("a1").value.toLowerCase();
-
-if(a=="ml"){
-next("clue2");
-}else{
-m1.innerHTML="Try again 🔍";
-}
-}
+</div>
 
 
-function check2(){
-let a=document.getElementById("a2").value.toLowerCase();
+<div class="box">
 
-if(a=="langga"){
-next("clue3");
-}else{
-m2.innerHTML="Try again 🔍";
-}
-}
+<h2>🏆 ACHIEVEMENTS UNLOCKED</h2>
+
+<p>
+✅ 2 Years Together<br>
+✅ Countless Games Played<br>
+✅ Many Memories Created<br>
+✅ Stayed Strong Through Challenges
+</p>
+
+</div>
 
 
-function check3(){
-let a=document.getElementById("a3").value.toLowerCase();
+<div class="box">
 
-if(a=="online games"){
-next("reward");
-}else{
-m3.innerHTML="Try again 🔍";
-}
-}
+<h2>❤️ Reason Why You're My Favorite Duo</h2>
 
-</script>
+<p>
+You always make me smile.<br>
+You stay with me.<br>
+You make every game more special.<br><br>
+
+Thank you for being my favorite teammate ❤️
+</p>
+
+</div>
+
+
+<button>💗 Duo Forever</button>
+
+
+</div>
 
 </body>
 </html>
