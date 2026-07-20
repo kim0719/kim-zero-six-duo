@@ -1,101 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kim & Zero Six ❤️</title>
+<title>🕵️ Mystery Case</title>
 
 <style>
 body{
-background:#ffb6d9;
+background:#222;
+color:white;
 font-family:Arial;
 text-align:center;
-color:white;
 padding:20px;
 }
 
-.card{
-background:#ff69b4;
+.box{
+background:#333;
 padding:25px;
 border-radius:20px;
 max-width:400px;
 margin:auto;
 }
 
-button{
-width:90%;
-padding:12px;
-margin:8px;
-border:none;
-border-radius:20px;
-background:white;
-color:#ff4d8d;
-font-size:16px;
+input{
+padding:10px;
+border-radius:10px;
+border:0;
+text-align:center;
 }
 
-.hide{
+button{
+padding:12px 20px;
+margin:10px;
+border:0;
+border-radius:15px;
+background:#d4af37;
+cursor:pointer;
+}
+
+.page{
 display:none;
 }
+
+.show{
+display:block;
+}
 </style>
+
 </head>
 
 <body>
 
-<div class="card">
+<div class="box">
 
-<h1>🎮 DUO PROFILE 🎮</h1>
-<h2>kim:) ❤️ Zero六</h2>
+<div id="start" class="page show">
+<h1>🕵️ Case File #001</h1>
+<p>The Hidden Surprise</p>
 
-<div id="menu">
-<h3>Choose One 💗</h3>
-
-<button onclick="openProfile()">1. 🎮 Duo Profile</button>
-<button onclick="openAchievements()">2. 🏆 Achievements</button>
-<button onclick="openReason()">3. ❤️ Reason Why You're My Favorite Duo</button>
+<button onclick="next('clue1')">🔍 Start Investigation</button>
 </div>
 
 
-<div id="profile" class="hide">
-<h2>🎮 DUO PROFILE UNLOCKED</h2>
+<div id="clue1" class="page">
+<h2>🗝️ Clue 1</h2>
+<p>Where did we first meet?</p>
 
-<p>
-👤 Player 1: kim:)<br>
-✨ Role: Kagura Main<br>
-💖 Special Skill: Making every moment special<br><br>
+<input id="a1" placeholder="Answer">
 
-👤 Player 2: Zero六<br>
-⚔️ Role: Freya User<br>
-🔥 Special Skill: Always fighting by my side
-</p>
+<br>
 
-<button onclick="back()">Back</button>
+<button onclick="check1()">Check</button>
+<p id="m1"></p>
 </div>
 
 
-<div id="achievement" class="hide">
-<h2>🏆 ACHIEVEMENTS</h2>
+<div id="clue2" class="page">
+<h2>📁 Clue 2</h2>
+<p>What do we call each other?</p>
 
-<p>
-✅ 2 Years Together<br>
-✅ Countless Games Played<br>
-✅ Many Memories Created<br>
-✅ Stayed Strong Through Challenges
-</p>
+<input id="a2" placeholder="Answer">
 
-<button onclick="back()">Back</button>
+<br>
+
+<button onclick="check2()">Check</button>
+<p id="m2"></p>
 </div>
 
 
-<div id="reason" class="hide">
-<h2>❤️ Why You're My Favorite Duo</h2>
+<div id="clue3" class="page">
+<h2>🔐 Clue 3</h2>
+<p>What is our favorite activity?</p>
 
-<p>
-You always make me smile.<br>
-You stay with me.<br>
-You make every game more special.<br><br>
+<input id="a3" placeholder="Answer">
 
-Thank you for being my favorite teammate ❤️
-</p>
+<br>
 
-<button onclick="back()">Back</button>
+<button onclick="check3()">Check</button>
+<p id="m3"></p>
+</div>
+
+
+<div id="reward" class="page">
+<h1>🏆 Case Solved!</h1>
+
+<p>You found the hidden surprise.</p>
+
+<h2>💋 A Kiss</h2>
 </div>
 
 
@@ -104,33 +112,45 @@ Thank you for being my favorite teammate ❤️
 
 <script>
 
-function hideAll(){
-menu.classList.add("hide");
-profile.classList.add("hide");
-achievement.classList.add("hide");
-reason.classList.add("hide");
+function next(page){
+document.querySelectorAll(".page")
+.forEach(x=>x.classList.remove("show"));
+
+document.getElementById(page)
+.classList.add("show");
 }
 
-function openProfile(){
-hideAll();
-profile.classList.remove("hide");
+
+function check1(){
+let a=document.getElementById("a1").value.toLowerCase();
+
+if(a=="ml"){
+next("clue2");
+}else{
+m1.innerHTML="Try again 🔍";
+}
 }
 
-function openAchievements(){
-hideAll();
-achievement.classList.remove("hide");
+
+function check2(){
+let a=document.getElementById("a2").value.toLowerCase();
+
+if(a=="langga"){
+next("clue3");
+}else{
+m2.innerHTML="Try again 🔍";
+}
 }
 
-function openReason(){
-hideAll();
-reason.classList.remove("hide");
-}
 
-function back(){
-menu.classList.remove("hide");
-profile.classList.add("hide");
-achievement.classList.add("hide");
-reason.classList.add("hide");
+function check3(){
+let a=document.getElementById("a3").value.toLowerCase();
+
+if(a=="online games"){
+next("reward");
+}else{
+m3.innerHTML="Try again 🔍";
+}
 }
 
 </script>
