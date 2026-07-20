@@ -1,115 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>🎮 Duo Profile ❤️</title>
+<title>Kim & Zero Six ❤️</title>
 
 <style>
 body{
-    background: linear-gradient(135deg,#ffb6d9,#ff4d8d);
-    font-family: Arial, sans-serif;
-    color:white;
-    text-align:center;
-    padding:20px;
+background:#ffb6d9;
+font-family:Arial;
+text-align:center;
+color:white;
+padding:20px;
 }
 
 .card{
-    background:#ffffff33;
-    backdrop-filter: blur(10px);
-    border-radius:25px;
-    padding:25px;
-    max-width:500px;
-    margin:auto;
-    box-shadow:0 0 20px #ff69b4;
-}
-
-h1{
-    color:#fff0f8;
-}
-
-h2{
-    color:#ffd6eb;
-}
-
-.box{
-    background:#ff69b433;
-    border-radius:15px;
-    padding:15px;
-    margin:15px 0;
-}
-
-.heart{
-    font-size:35px;
-}
-
-.line{
-    color:#ffe6f2;
+background:#ff69b4;
+padding:25px;
+border-radius:20px;
+max-width:400px;
+margin:auto;
 }
 
 button{
-    background:#ff4d8d;
-    color:white;
-    border:none;
-    padding:15px 30px;
-    border-radius:30px;
-    font-size:16px;
+width:90%;
+padding:12px;
+margin:8px;
+border:none;
+border-radius:20px;
+background:white;
+color:#ff4d8d;
+font-size:16px;
+}
+
+.hide{
+display:none;
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="card">
 
-<div class="heart">💗</div>
-
-<h1>🎮 DUO PROFILE UNLOCKED 🎮</h1>
-
+<h1>🎮 DUO PROFILE 🎮</h1>
 <h2>kim:) ❤️ Zero六</h2>
 
-<p class="line">━━━━━━━━━━━━━━</p>
+<div id="menu">
+<h3>Choose One 💗</h3>
+
+<button onclick="openProfile()">1. 🎮 Duo Profile</button>
+<button onclick="openAchievements()">2. 🏆 Achievements</button>
+<button onclick="openReason()">3. ❤️ Reason Why You're My Favorite Duo</button>
+</div>
 
 
-<div class="box">
-
-<h2>👤 Player 1: kim:)</h2>
+<div id="profile" class="hide">
+<h2>🎮 DUO PROFILE UNLOCKED</h2>
 
 <p>
+👤 Player 1: kim:)<br>
 ✨ Role: Kagura Main<br>
-💖 Special Skill: Making every moment special<br>
-🏆 Title: Favorite Duo Partner
-</p>
+💖 Special Skill: Making every moment special<br><br>
 
-
-<h2>👤 Player 2: Zero六</h2>
-
-<p>
+👤 Player 2: Zero六<br>
 ⚔️ Role: Freya User<br>
-🔥 Special Skill: Always fighting by my side<br>
-🏆 Title: My Forever Teammate
+🔥 Special Skill: Always fighting by my side
 </p>
 
+<button onclick="back()">Back</button>
 </div>
 
 
-<div class="box">
-
-<h2>📊 DUO STATS</h2>
-
-<p>
-❤️ Together Since: 2 Years<br>
-🎮 Favorite Activity: Playing & Making Memories<br>
-🏆 Teamwork: 100%<br>
-✨ Chemistry: Legendary<br>
-💎 Bond Level: MAX
-</p>
-
-</div>
-
-
-<div class="box">
-
-<h2>🏆 ACHIEVEMENTS UNLOCKED</h2>
+<div id="achievement" class="hide">
+<h2>🏆 ACHIEVEMENTS</h2>
 
 <p>
 ✅ 2 Years Together<br>
@@ -118,12 +80,12 @@ button{
 ✅ Stayed Strong Through Challenges
 </p>
 
+<button onclick="back()">Back</button>
 </div>
 
 
-<div class="box">
-
-<h2>❤️ Reason Why You're My Favorite Duo</h2>
+<div id="reason" class="hide">
+<h2>❤️ Why You're My Favorite Duo</h2>
 
 <p>
 You always make me smile.<br>
@@ -133,13 +95,45 @@ You make every game more special.<br><br>
 Thank you for being my favorite teammate ❤️
 </p>
 
+<button onclick="back()">Back</button>
 </div>
 
 
-<button>💗 Duo Forever</button>
-
-
 </div>
+
+
+<script>
+
+function hideAll(){
+menu.classList.add("hide");
+profile.classList.add("hide");
+achievement.classList.add("hide");
+reason.classList.add("hide");
+}
+
+function openProfile(){
+hideAll();
+profile.classList.remove("hide");
+}
+
+function openAchievements(){
+hideAll();
+achievement.classList.remove("hide");
+}
+
+function openReason(){
+hideAll();
+reason.classList.remove("hide");
+}
+
+function back(){
+menu.classList.remove("hide");
+profile.classList.add("hide");
+achievement.classList.add("hide");
+reason.classList.add("hide");
+}
+
+</script>
 
 </body>
 </html>
